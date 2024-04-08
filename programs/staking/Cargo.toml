@@ -1,0 +1,27 @@
+[package]
+name = "staking"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "anchor_stake"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+anchor-spl = "0.29.0"
+# https://github.com/project-serum/anchor/tree/master/spl
+spl-token = {version = "4.0.0", features = ["no-entrypoint"]}
+solana-sdk = "1.18.2"
+solana-program = "1.18.2"
+solana-client = "1.18.2"
+
